@@ -124,7 +124,9 @@ async function init() {
   }
 }
 
-init().catch(console.error);
+if (process.argv.indexOf(__filename) > 0) {
+  init().catch(console.error);
+}
 
 module.exports = {
   processDirectory: processDirectory

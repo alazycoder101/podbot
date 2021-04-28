@@ -116,7 +116,7 @@ class Podbot {
       await message.reply(`you're not in a voice channel`);
       return;
     }
-    await message.reply(`playing ...`);
+    await message.reply(`recording ...`);
     this._updatePresence();
     member.voice.channel.members.forEach((member) => {
       this._startRecording(member, podcast);

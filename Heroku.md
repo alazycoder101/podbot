@@ -3,7 +3,9 @@
 ## Container
 ```
 heroku config:set POD_TOKEN=joesmith -a bot-recorder
-heroku config:set POD_USERS=admin -a bot-recorder
+heroku config:set POD_ROLES=admin -a bot-recorder
+heroku config:set POD_OUTPUT_FORMAT=mp3 -a bot-recorder
+heroku config:set POD_PREFIX=* -a bot-recorder
 
 heroku stack:set container -a bot-recorder
 ```

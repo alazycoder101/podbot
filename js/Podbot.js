@@ -95,7 +95,14 @@ class Podbot {
   }
 
   async _help(message) {
-    message.reply("/podon: start recording\n/stop: stop recording\n/record: record again\n/state: recording state\n/play: play recordings\n/podoff: leave");
+    const prefix = this._config.commandPrefix;
+    const commands = ['podon: start recording',
+          'stop: stop recording',
+          'record: record again',
+          'state: recording state',
+          'play: play recordings',
+          'podoff: leave'];
+    message.reply(commands.map( command => prefix + command ).join("\n"));
   }
 
   async _record(message) {
@@ -116,7 +123,7 @@ class Podbot {
       await message.reply(`you're not in a voice channel`);
       return;
     }
-    await message.reply(`playing ...`);
+    await message.reply(`recording ...`);
     this._updatePresence();
     member.voice.channel.members.forEach((member) => {
       this._startRecording(member, podcast);

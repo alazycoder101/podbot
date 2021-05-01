@@ -168,7 +168,6 @@ async function assembleUsers(inputDirectory, outputFormat) {
         audios.push(`${inputDirectory}/${file}`);
       }
     }
-      console.log('audios=', audios);
     return audios;
   }
 }
